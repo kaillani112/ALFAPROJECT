@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title><link href="wwwroot/css/bootstrap.css" rel="stylesheet">
+</head>
+<style>
+</style>
+<body>
+    <div>
+        <div class="row mt-5">
+            <div clasds="col-4">
+                From:<input type="number" id="start" placeholder="enter starting number"><br>
+                To: <input type="number" id="stop" placeholder="enter ending number">
+                <button type="button" class="btn btn-primary" onclick="countNumber()" >Display</button>
+                <button type="button" id="btn" class="btn btn-danger" onclick="Hide()">Hide</button>
+            </div>
+        </div>
+        <div class="row ms-3" id="result">
+            
+        </div>
+    </div>
+    <script>
+        function countNumber(){
+            //let result=[];
+
+            let start=document.getElementById("start").value;
+            let stop=document.getElementById("stop").value;
+
+            
+            for(let i=start; i<=stop; i++){
+             document.getElementById("result").innerHTML+=`<br>${i}`;
+                //alert(i);
+            }
+            //document.getElementById("result").innerText=result;
+            //alert(start);
+        }
+        function Hide(){
+            if(document.getElementById("btn").innerText=="Hide"){
+              document.getElementById("result").classList.add("invisible");
+              document.getElementById("btn").innerText="Show";
+              document.getElementById("btn").classList.remove("btn-danger");
+              document.getElementById("btn").classList.add("btn-info");
+            }
+            else if(document.getElementById("btn").innerText=="Show"){
+                   document.getElementById("result").classList.remove("invisible");
+                   document.getElementById("btn").innerText="Hide";
+                   document.getElementById("btn").classList.remove("btn-info");
+              document.getElementById("btn").classList.add("btn-danger");
+            }
+
+
+
+
+
+            }
+
+
+
+    </script>
+    
+</body>
+</html>
